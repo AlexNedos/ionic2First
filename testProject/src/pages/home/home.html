@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="logForm(search)">
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="search" name="search"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" block>Search</button>
+  </form>
+  <ion-list>
+    <ion-item *ngFor="let i of items"><img src="{{i}}" alt=""></ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event, search)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
