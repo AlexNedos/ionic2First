@@ -1,21 +1,48 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Search images</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <form (ngSubmit)="logForm(search)">
+  <form (ngSubmit)="logForm(search, category)">
     <ion-item>
       <ion-input type="text" [(ngModel)]="search" name="search"></ion-input>
     </ion-item>
+    <ion-list>
+  <ion-item>
+    <ion-label>Category</ion-label>
+    <ion-select [(ngModel)]="category" [ngModelOptions]="{standalone: true}">
+      <ion-option value="undefined">All</ion-option>
+      <ion-option value="fashion">Fashion</ion-option>
+      <ion-option value="nature">Nature</ion-option>
+      <ion-option value="backgrounds">Backgrounds</ion-option>
+      <ion-option value="science">Science</ion-option>
+      <ion-option value="education">Education</ion-option>
+      <ion-option value="people">People</ion-option>
+      <ion-option value="feelings">Feelings</ion-option>
+      <ion-option value="religion">Religion</ion-option>
+      <ion-option value="health">Health</ion-option>
+      <ion-option value="places">Places</ion-option>
+      <ion-option value="animals">Animals</ion-option>
+      <ion-option value="industry">Industry</ion-option>
+      <ion-option value="food">Food</ion-option>
+      <ion-option value="computer">Computer</ion-option>
+      <ion-option value="sports">Sports</ion-option>
+      <ion-option value="travel">Travel</ion-option>
+      <ion-option value="buildings">Buildings</ion-option>
+      <ion-option value="business">Business</ion-option>
+      <ion-option value="music">Music</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
     <button ion-button type="submit" block>Search</button>
   </form>
   <ion-list>
-    <ion-item *ngFor="let i of items"><img src="{{i}}" alt=""></ion-item>
+    <ion-item (click)="openPhoto()" *ngFor="let i of items"><img src="{{i}}" alt=""></ion-item>
   </ion-list>
 
-  <ion-infinite-scroll (ionInfinite)="doInfinite($event, search)">
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event, search, category)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
