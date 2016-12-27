@@ -1,13 +1,15 @@
 <ion-header>
   <ion-navbar>
     <ion-title>Search images</ion-title>
+    <ion-buttons end>
+     <button (click)="openLibrary()" ion-button>
+      Library
+     </button>
+  </ion-buttons>
   </ion-navbar>
-</ion-header>
-
-<ion-content padding>
   <form (ngSubmit)="logForm(search, category)">
     <ion-item>
-      <ion-input type="text" [(ngModel)]="search" name="search"></ion-input>
+      <ion-input type="text" placeholder="Search" [(ngModel)]="search" name="search"></ion-input>
     </ion-item>
     <ion-list>
   <ion-item>
@@ -38,8 +40,12 @@
 </ion-list>
     <button ion-button type="submit" block>Search</button>
   </form>
+</ion-header>
+
+<ion-content padding>
+
   <ion-list>
-    <ion-item (click)="openPhoto()" *ngFor="let i of items"><img src="{{i}}" alt=""></ion-item>
+    <ion-item (click)="openPhoto(i)" *ngFor="let i of items"><img src="{{i}}" alt=""></ion-item>
   </ion-list>
 
   <ion-infinite-scroll (ionInfinite)="doInfinite($event, search, category)">

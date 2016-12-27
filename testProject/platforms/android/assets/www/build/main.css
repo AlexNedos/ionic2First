@@ -21748,3 +21748,7 @@ sub {
     padding-top: calc(16px + 20px);
   }
 }
+
+.item-ios.item-block .item-inner {
+  border: 0;
+}
