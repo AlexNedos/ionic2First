@@ -20,10 +20,10 @@ export class HomePage {
   categoryType = '';
 
 
-  presentAlert(aa) {
+  presentAlert(bb) {
     let alert = this.alertCtrl.create({
       title: 'Low battery',
-      subTitle: aa,
+      subTitle: bb,
       buttons: ['Dismiss']
     });
     alert.present();
