@@ -32,7 +32,7 @@ export class HomePage {
   // presentAlert(bb) {
   //   let alert = this.alertCtrl.create({
   //     title: 'Low battery',
-  //     subTitle: bb,
+  //     subTitle: bb, 
   //     buttons: ['Dismiss']
   //   });
   //   alert.present();
