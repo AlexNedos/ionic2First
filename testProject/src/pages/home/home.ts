@@ -77,22 +77,22 @@ export class HomePage {
   }
   presentToast(status) {
     console.log(status)
-    var error;
-    if (status === 400) {
-      error = 'No more result'
-    } else if (status === null) {
-      error = 'No results'
-    } else if (status === 0) {
-      error = 'No internet connection'
-    } else if (status === undefined) {
-      error = 'Please enter something in the search'
-    }
-    let toast = this.toastCtrl.create({
-      message: error,
-      duration: 3000,
-      position: 'top'
-    });
-    toast.present();
+   //  var error;
+   //  if (status === 400) {
+   //    error = 'No more result'
+   //  } else if (status === null) {
+   //    error = 'No results'
+   //  } else if (status === 0) {
+   //    error = 'No internet connection'
+   //  } else if (status === undefined) {
+   //    error = 'Please enter something in the search'
+   //  }
+   //  let toast = this.toastCtrl.create({
+   //    message: error,
+   //    duration: 3000,
+   //    position: 'top'
+   //  });
+   //  toast.present();
   }
   logForm(data, category) {
     if (data === undefined) {
