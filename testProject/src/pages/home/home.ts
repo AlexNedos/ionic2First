@@ -29,15 +29,6 @@ export class HomePage {
      this.appCtrl.getRootNav().push(LibraryPage);
  }
 
-  // presentAlert(bb) {
-  //   let alert = this.alertCtrl.create({
-  //     title: 'Low battery',
-  //     subTitle: bb, 
-  //     buttons: ['Dismiss']
-  //   });
-  //   alert.present();
-  // }
-
   openPhoto(item) {
     let actionSheet = this.actionSheetCtrl.create({
       buttons: [

@@ -29,6 +29,7 @@ export class LibraryPage {
         this.library.push(elem[i])
       }
       loader.dismiss()
+      console.log(this.library)
     });
   }
 
