@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-navbar>
+<ion-header  class="headerHome">
+  <ion-navbar  color="dark">
     <ion-title>Search images</ion-title>
     <ion-buttons end>
      <button (click)="openLibrary()" ion-button>
@@ -38,14 +38,17 @@
     </ion-select>
   </ion-item>
 </ion-list>
-    <button ion-button type="submit" block>Search</button>
+    <button ion-button full color="homeBackground" class="buttonSubmit" type="submit" block>Search</button>
   </form>
 </ion-header>
-
-<ion-content padding>
-
+<ion-content class="contentHome" padding>
+   <ion-fab>
+   <button color="dark"  (click)="viewMenu()" ion-fab>
+       <ion-icon name="arrow-down"></ion-icon>
+   </button>
+ </ion-fab>
   <ion-list>
-    <ion-item (click)="openPhoto(i)" *ngFor="let i of items"><img src="{{i}}" alt=""></ion-item>
+    <ion-item (click)="openPhoto(i)" *ngFor="let i of items"><img src="{{i.webformatURL}}" alt=""></ion-item>
   </ion-list>
 
   <ion-infinite-scroll (ionInfinite)="doInfinite($event, search, category)">
