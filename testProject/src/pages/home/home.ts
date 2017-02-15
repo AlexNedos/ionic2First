@@ -27,8 +27,6 @@ export class HomePage {
   ) {
      platform.ready().then(() => {
      setTimeout(() => {
-        alert('fdfdfdf')
-      //  StatusBar.backgroundColorByHexString('#16a085'); // set status bar to white
        StatusBar.overlaysWebView(true);
        StatusBar.backgroundColorByHexString('#16a085');
      },1000);
