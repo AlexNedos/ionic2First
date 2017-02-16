@@ -27,6 +27,9 @@ export class LibraryPage {
     loader.present();
     this.storage.get('library').then((elem) => {
       this.library = [];
+      if (elem.length == undefined) {
+         console.log('ff')
+      } else {
       for (let i = 0; i < elem.length; i++) {
         let API_KEY = '2683000-931909b1d6f29b69f89649b0a';
         let link = 'https://pixabay.com/api/?key=' + API_KEY + '&id=' + elem[i];
@@ -38,6 +41,8 @@ export class LibraryPage {
             console.log(error)
           });
       }
+      }
+
       loader.dismiss()
       console.log(this.library)
     });
