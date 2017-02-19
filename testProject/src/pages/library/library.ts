@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 
-import { NavController, ActionSheetController, LoadingController } from 'ionic-angular';
+import { NavController, ActionSheetController, LoadingController, ToastController, AlertController, App} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Http } from '@angular/http';
+import { HomePage } from '../home/home';
+
 
 @Component({
   selector: 'page-library',
@@ -10,10 +12,14 @@ import { Http } from '@angular/http';
 })
 export class LibraryPage {
 
+
   constructor(
     public navCtrl: NavController,
     public storage: Storage,
     public http: Http,
+    public appCtrl: App,
+    public alertCtrl: AlertController,
+    public toastCtrl: ToastController,
     public actionSheetCtrl: ActionSheetController,
     public loadingCtrl: LoadingController
 
@@ -21,25 +27,53 @@ export class LibraryPage {
   library = [];
 
   ngOnInit() {
+   //  let toast = this.toastCtrl.create({
+   //    message: 'Not images in library',
+   //    duration: 1500,
+   //    position: 'top'
+   //  });
+
+    let alert = this.alertCtrl.create({
+      title: 'Oh no!',
+      subTitle: 'Not images in library...',
+      buttons: [{
+        text: 'Back',
+        handler: data => {
+         //  this.appCtrl.getRootNav().push(HomePage);
+          this.navCtrl.pop();
+        }
+      }]
+    });
+
     let loader = this.loadingCtrl.create({
       content: "Please wait..."
     });
     loader.present();
     this.storage.get('library').then((elem) => {
       this.library = [];
-      for (let i = 0; i < elem.length; i++) {
-        let API_KEY = '2683000-931909b1d6f29b69f89649b0a';
-        let link = 'https://pixabay.com/api/?key=' + API_KEY + '&id=' + elem[i];
-        this.http.get(link)
-          .subscribe(data => {
-            let dataParse = data.json();
-            this.library.push(dataParse.hits[0]);
-          }, error => {
-            console.log(error)
-          });
+      if (elem == undefined) {
+        loader.dismiss()
+        alert.present();
+      } else if (elem.length == 0) {
+        loader.dismiss()
+        alert.present();
+      } else {
+        for (let i = 0; i < elem.length; i++) {
+          let API_KEY = '2683000-931909b1d6f29b69f89649b0a';
+          let link = 'https://pixabay.com/api/?key=' + API_KEY + '&id=' + elem[i];
+          this.http.get(link)
+            .subscribe(data => {
+              let dataParse = data.json();
+              this.library.push(dataParse.hits[0]);
+            }, error => {
+              console.log(error)
+            });
+        }
+        loader.dismiss()
+        console.log(this.library)
       }
-      loader.dismiss()
-      console.log(this.library)
+
+
     });
   }
 

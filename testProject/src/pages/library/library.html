@@ -1,10 +1,10 @@
 <ion-header>
-  <ion-navbar  color="dark">
+  <ion-navbar  color="primary">
     <ion-title>My library</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="contentLibrary" padding>
    <ion-list>
      <ion-item (click)="openPhoto(i)" *ngFor="let i of library"><img src="{{i.webformatURL}}" alt=""></ion-item>
    </ion-list>

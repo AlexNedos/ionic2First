@@ -21749,8 +21749,62 @@ sub {
   }
 }
 
+.homeScreen {
+  background-color: #252525 !important;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.buttonHome {
+  background-color: rgba(90, 90, 90, 0) !important;
+  width: 7em !important;
+  height: 7em !important;
+}
+
+.buttonHome.videoButton {
+  color: #f53d3d !important;
+}
+
+.buttonHome.imageButton {
+  color: #32db64 !important;
+}
+
+.buttonHome.libraryButton {
+  color: #387ef5 !important;
+}
+
+.iconHomeButton {
+  font-size: 7em;
+}
+
+.textOnButtonHome {
+  color: white;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.item-ios,
+.item-md {
+  background: #252525;
+  color: #fff;
+}
+
+ion-content {
+  top: 1px !important;
+}
+
+.button-md {
+  box-shadow: 0px 0px 0px !important;
+}
+
 .item-ios.item-block .item-inner {
   border: 0;
+}
+
+ion-list {
+  margin: -1px 0 -4px 0 !important;
 }
 
 .headerHome,
@@ -21758,8 +21812,13 @@ sub {
   transition: 0.5s;
 }
 
-[padding], [padding] .scroll-content {
-  padding: 0px !important;
+.contentHome {
+  background: #252525;
+}
+
+[padding],
+[padding] .scroll-content {
+  padding: 0 !important;
 }
 
 ion-fab {
@@ -21767,33 +21826,38 @@ ion-fab {
   transition: 0.5s;
 }
 
-.buttonSubmit {
-  background-color: #16a085 !important;
-}
-
 .toast-wrapper.toast-top {
-  background: #16a085 !important;
+  background: #4a6963 !important;
 }
 
-.toolbar-background {
-  background-color: #16a085 !important;
-  border-color: #16a085 !important;
+.toast-md .toast-wrapper.toast-top {
+  height: 56px;
 }
 
-.fab {
-  background-color: #16a085 !important;
+.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+  border-bottom: 0 !important;
 }
 
-.action-sheet-md .action-sheet-container {
-  background: #16a085 !important;
+.list-ios > .item-block:first-child {
+  border-top: 0 !important;
 }
 
-.action-sheet-md .action-sheet-button {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.27);
-  background: transparent !important;
-  color: white !important;
+.item-ios.activated {
+  background-color: #252525 !important;
 }
 
-.action-sheet-md .action-sheet-cancel {
-  border-bottom: 0;
+.item-md.activated {
+  background-color: #252525 !important;
+}
+
+.list-md .item-block .item-inner {
+  border-bottom: 0 !important;
+}
+
+.item-md.item-block .item-inner {
+  border-bottom: 0 !important;
+}
+
+.contentLibrary {
+  background: #252525;
 }
