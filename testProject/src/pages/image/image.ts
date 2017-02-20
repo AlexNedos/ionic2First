@@ -29,7 +29,7 @@ export class ImagePage {
      setTimeout(() => {
        StatusBar.overlaysWebView(true);
        StatusBar.backgroundColorByHexString('#16a085');
-     },1000);
+     },1);
    });
  }
   items = [];
@@ -78,7 +78,6 @@ export class ImagePage {
 
   ngAfterViewInit() {
     this.content.addScrollListener(this.onPageScroll);
-   //   StatusBar.backgroundColorByHexString('#16a085');
   }
 
 

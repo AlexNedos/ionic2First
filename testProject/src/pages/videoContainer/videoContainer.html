@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="dark">
+
+    <ion-title>Player</ion-title>
+    <ion-buttons end>
+    <button (click)="closeVideo()" ion-button>
+     Close
+    </button>
+</ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content class="homeScreen">
+
+<div class="modal transparent fullscreen-player">
+   <video controls="controls" preload="metadata" autoplay="autoplay" *ngFor="let i of items" class="centerme" width="100%" >
+      <source src="{{i}}">
+      </video>
+</div>
+</ion-content>

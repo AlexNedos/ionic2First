@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
-import { NavController, ActionSheetController, LoadingController, ToastController, AlertController, App} from 'ionic-angular';
+import { NavController, ActionSheetController, LoadingController, ToastController, AlertController, App, Platform} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { Http } from '@angular/http';
-import { HomePage } from '../home/home';
+import { StatusBar } from 'ionic-native';
+
 
 
 @Component({
@@ -21,9 +22,17 @@ export class LibraryPage {
     public alertCtrl: AlertController,
     public toastCtrl: ToastController,
     public actionSheetCtrl: ActionSheetController,
-    public loadingCtrl: LoadingController
+    public loadingCtrl: LoadingController,
+   public platform: Platform
 
-  ) { }
+  ) {
+     platform.ready().then(() => {
+     setTimeout(() => {
+     StatusBar.overlaysWebView(true);
+     StatusBar.backgroundColorByHexString('#387ef5');
+     },1);
+ });
+ }
   library = [];
 
   ngOnInit() {

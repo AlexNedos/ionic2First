@@ -5,6 +5,7 @@ import { HomePage } from '../pages/home/home';
 import { LibraryPage } from '../pages/library/library';
 import { ImagePage } from '../pages/image/image';
 import { VideoPage } from '../pages/video/video';
+import { VideoContainerPage } from '../pages/videoContainer/videoContainer';
 import { Storage } from '@ionic/storage';
 
 @NgModule({
@@ -13,6 +14,7 @@ import { Storage } from '@ionic/storage';
     HomePage,
     ImagePage,
     VideoPage,
+    VideoContainerPage,
     LibraryPage
   ],
   imports: [
@@ -24,6 +26,7 @@ import { Storage } from '@ionic/storage';
     HomePage,
     ImagePage,
     VideoPage,
+    VideoContainerPage,
     LibraryPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, Storage]
