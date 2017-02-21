@@ -30,7 +30,9 @@ export class VideoPage {
      platform.ready().then(() => {
      setTimeout(() => {
       StatusBar.overlaysWebView(true);
-      StatusBar.backgroundColorByHexString('#f53d3d');
+       StatusBar.styleLightContent();
+      StatusBar.backgroundColorByHexString('#252525');
+      // StatusBar.backgroundColorByHexString('#f53d3d');
      },1);
   });
  }

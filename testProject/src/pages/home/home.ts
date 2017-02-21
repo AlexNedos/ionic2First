@@ -29,6 +29,7 @@ export class HomePage {
        platform.ready().then(() => {
        setTimeout(() => {
           StatusBar.overlaysWebView(true);
+          StatusBar.styleLightContent();
           StatusBar.backgroundColorByHexString('#252525');
        },1);
      });

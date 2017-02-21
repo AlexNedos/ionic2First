@@ -32,7 +32,9 @@ export class LibraryPage {
      platform.ready().then(() => {
      setTimeout(() => {
      StatusBar.overlaysWebView(true);
-     StatusBar.backgroundColorByHexString('#387ef5');
+      StatusBar.styleLightContent();
+     StatusBar.backgroundColorByHexString('#252525');
+   //   StatusBar.backgroundColorByHexString('#387ef5');
      },1);
 
  });
