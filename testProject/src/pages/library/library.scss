@@ -1,3 +1,24 @@
 .contentLibrary {
-      background: #252525;
+   background: #252525;
+}
+
+.segment-md .segment-button {
+   height: 5.5rem !important;
+   border-bottom-width: 5px !important;
+   border-bottom-color: rgba(0, 0, 0, 0) !important;
+}
+.segment-md-primary .segment-button.segment-activated {
+    border-color: #387ef5 !important;
+}
+
+.toolbar-background-md {
+   background: transparent !important;
+}
+.toolbar-md {
+   padding: 0px !important;
+}
+
+.toolbar-background-ios {
+   border-color: #252525 !important;
+   background: transparent !important;
 }

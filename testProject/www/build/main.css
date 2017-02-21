@@ -21862,6 +21862,39 @@ ion-fab {
   background: #252525;
 }
 
+.segment-md .segment-button {
+  height: 5.5rem !important;
+  border-bottom-width: 5px !important;
+  border-bottom-color: transparent !important;
+}
+
+.segment-md-primary .segment-button.segment-activated {
+  border-color: #387ef5 !important;
+}
+
+.toolbar-background-md {
+  background: transparent !important;
+}
+
+.toolbar-md {
+  padding: 0px !important;
+}
+
+.toolbar-background-ios {
+  border-color: #252525 !important;
+  background: transparent !important;
+}
+
+.text-input-md {
+  margin: 13px 8px 13px 0px;
+  padding: 0;
+  width: calc(100% - 8px - 8px);
+}
+
+.fab {
+  height: 57px !important;
+}
+
 .fullscreen-player {
   max-width: 100%;
   max-height: 100%;

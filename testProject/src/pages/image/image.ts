@@ -96,10 +96,10 @@ export class ImagePage {
           text: 'Add to library',
           role: 'destructive',
           handler: () => {
-            this.storage.get('library').then((elem) => {
+            this.storage.get('libraryImages').then((elem) => {
               if (elem === null) {
                 this.library.push(item.id);
-                this.storage.set('library', this.library).then(() => {
+                this.storage.set('libraryImages', this.library).then(() => {
                 });
               } else {
                 let checked = false;
@@ -110,7 +110,7 @@ export class ImagePage {
                 }
                 if (checked === false) {
                   elem.push(item.id);
-                  this.storage.set('library', elem).then(() => {
+                  this.storage.set('libraryImages', elem).then(() => {
                   });
                 }
               }

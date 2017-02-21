@@ -2,10 +2,32 @@
   <ion-navbar  color="primary">
     <ion-title>My library</ion-title>
   </ion-navbar>
+  <ion-toolbar>
+  <ion-segment [(ngModel)]="media" color="primary">
+     <ion-segment-button value="images" (ionSelect)="selectedImages()">
+      <ion-icon name="images"></ion-icon>
+     </ion-segment-button>
+     <ion-segment-button value="videos" (ionSelect)="selectedVideos()">
+       <ion-icon name="videocam"></ion-icon>
+     </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
 </ion-header>
 
 <ion-content class="contentLibrary" padding>
-   <ion-list>
-     <ion-item (click)="openPhoto(i)" *ngFor="let i of library"><img src="{{i.webformatURL}}" alt=""></ion-item>
-   </ion-list>
+
+<div [ngSwitch]="media">
+  <ion-list *ngSwitchCase="'images'">
+    <ion-item (click)="openPhoto(i)" *ngFor="let i of libraryImages"><img src="{{i.webformatURL}}" alt=""></ion-item>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'videos'">
+     <ion-item  (click)="openVideo(i)" *ngFor="let i of libraryVideos">
+      <video width="100%" >
+          <source src="{{i}}">
+      </video>
+     </ion-item>
+  </ion-list>
+</div>
+
 </ion-content>

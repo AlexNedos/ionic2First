@@ -196,23 +196,22 @@ export class VideoPage {
          },
         {
           text: 'Add to library',
-          role: 'destructive',
           handler: () => {
-           this.storage.get('library').then((elem) => {
+           this.storage.get('libraryVideos').then((elem) => {
               if (elem === null) {
-                this.library.push(item.id);
-                this.storage.set('library', this.library).then(() => {
+                this.library.push(item);
+                this.storage.set('libraryVideos', this.library).then(() => {
                 });
               } else {
                 let checked = false;
                 for (let i = 0; i < elem.length; i++) {
-                  if (elem[i] === item.id) {
+                  if (elem[i] === item) {
                     checked = true;
                   }
                 }
                 if (checked === false) {
-                  elem.push(item.id);
-                  this.storage.set('library', elem).then(() => {
+                  elem.push(item);
+                  this.storage.set('libraryVideos', elem).then(() => {
                   });
                 }
               }
