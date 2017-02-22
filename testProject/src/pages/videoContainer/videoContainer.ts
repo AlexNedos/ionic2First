@@ -22,7 +22,8 @@ public platform: Platform,
      platform.ready().then(() => {
      setTimeout(() => {
      StatusBar.overlaysWebView(true);
-     StatusBar.backgroundColorByHexString('#387ef5');
+     StatusBar.styleLightContent();
+    StatusBar.backgroundColorByHexString('#252525');
      },1);
  });
  }

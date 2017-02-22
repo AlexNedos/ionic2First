@@ -19,7 +19,10 @@ export class MyApp {
       StatusBar.overlaysWebView(true);
       StatusBar.backgroundColorByHexString('#252525');
       StatusBar.styleDefault();
-      Splashscreen.hide();
+      setTimeout(function(){
+         Splashscreen.hide();
+      }, 300)
+
     });
   }
 }

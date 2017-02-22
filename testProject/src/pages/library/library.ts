@@ -63,7 +63,7 @@ export class LibraryPage {
      let toast = this.toastCtrl.create({
      message: 'Not video in library...',
      duration: 1500,
-     position: 'top'
+     position: 'bottom'
      });
      this.storage.get('libraryVideos').then((elem) => {
         console.log(elem)

@@ -45,7 +45,7 @@ export class ImagePage {
 
      if ($(".scroll-content ion-list").height() != 0) {
         $(".headerHome").css({
-          top: '-187px'
+           top: '-200px'
         });
         $(".contentHome .scroll-content").css({
           marginTop: '0px'
@@ -142,18 +142,18 @@ export class ImagePage {
     console.log(status)
     var error;
     if (status === 400) {
-      error = 'No more result'
+      error = 'No more result...'
     } else if (status === null) {
-      error = 'No results'
+      error = 'No results...'
     } else if (status === 0) {
-      error = 'No internet connection'
+      error = 'No internet connection...'
     } else if (status === undefined) {
-      error = 'Please enter something in the search'
+      error = 'Please enter something in the search...'
     }
     let toast = this.toastCtrl.create({
       message: error,
       duration: 1500,
-      position: 'top'
+      position: 'bottom'
     });
     toast.present();
   }

@@ -49,7 +49,7 @@ export class VideoPage {
 
      if ($(".scroll-content ion-list").height() != 0) {
         $(".headerHome").css({
-          top: '-187px'
+          top: '-200px'
         });
         $(".contentHome .scroll-content").css({
           marginTop: '0px'
@@ -111,7 +111,9 @@ export class VideoPage {
           } else {
             this.items = [];
             for (var i = 0; i < dataParse.hits.length; i++) {
-              this.items.push(dataParse.hits[i].videos.small.url);
+               // https://i.vimeocdn.com/video/{ PICTURE_ID }_{ SIZE }.jpg
+              this.items.push(dataParse.hits[i]);
+            //   this.items.push(dataParse.hits[i].videos.small.url);
             }
           }
         }, error => {
@@ -145,7 +147,8 @@ export class VideoPage {
           .subscribe(data => {
             let dataParse = data.json();
             for (var i = 0; i < dataParse.hits.length; i++) {
-              this.items.push(dataParse.hits[i].videos.medium.url);
+              this.items.push(dataParse.hits[i]);
+            //   this.items.push(dataParse.hits[i].videos.medium.url);
             }
           }, error => {
             console.log(error)
@@ -164,18 +167,18 @@ export class VideoPage {
     console.log(status)
     var error;
     if (status === 400) {
-      error = 'No more result'
+      error = 'No more result...'
     } else if (status === null) {
-      error = 'No results'
+      error = 'No results...'
     } else if (status === 0) {
-      error = 'No internet connection'
+      error = 'No internet connection...'
     } else if (status === undefined) {
-      error = 'Please enter something in the search'
+      error = 'Please enter something in the search...'
     }
     let toast = this.toastCtrl.create({
       message: error,
       duration: 1500,
-      position: 'top'
+      position: 'bottom'
     });
     toast.present();
   }

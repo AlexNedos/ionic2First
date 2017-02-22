@@ -49,14 +49,9 @@
  </ion-fab>
   <ion-list>
     <ion-item  (click)="openVideo(i)" *ngFor="let i of items">
-      <video width="100%" >
-         <source src="{{i}}">
-      </video>
+      <img src="https://i.vimeocdn.com/video/{{i.picture_id}}_640x360.jpg" alt="">
     </ion-item>
   </ion-list>
-<!--
-  <video controls="controls" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer"><source src="http://player.vimeo.com/external/85569724.sd.mp4?s=43df5df0d733011263687d20a47557e4" type="video/mp4"/></video> -->
-
   <ion-infinite-scroll (ionInfinite)="doInfinite($event, search, category)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
   </ion-infinite-scroll>

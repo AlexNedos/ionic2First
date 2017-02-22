@@ -23,9 +23,7 @@
 
   <ion-list *ngSwitchCase="'videos'">
      <ion-item  (click)="openVideo(i)" *ngFor="let i of libraryVideos">
-      <video width="100%" >
-          <source src="{{i}}">
-      </video>
+      <img src="https://i.vimeocdn.com/video/{{i.picture_id}}_640x360.jpg" alt="">
      </ion-item>
   </ion-list>
 </div>

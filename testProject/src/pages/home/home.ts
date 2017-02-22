@@ -25,7 +25,6 @@ export class HomePage {
     public appCtrl: App,
     public platform: Platform
   ) {
-
        platform.ready().then(() => {
        setTimeout(() => {
           StatusBar.overlaysWebView(true);

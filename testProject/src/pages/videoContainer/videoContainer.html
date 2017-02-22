@@ -14,7 +14,7 @@
 
 <div class="modal transparent fullscreen-player">
    <video controls="controls" preload="metadata" autoplay="autoplay" *ngFor="let i of items" class="centerme" width="100%" >
-      <source src="{{i}}">
+      <source src="{{i.videos.medium.url}}">
       </video>
 </div>
 </ion-content>

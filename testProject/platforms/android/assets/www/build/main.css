@@ -21822,10 +21822,6 @@ ion-fab {
   transition: 0.5s;
 }
 
-.toast-wrapper.toast-top {
-  background: #4a6963 !important;
-}
-
 .toast-md .toast-wrapper.toast-top {
   height: 56px;
 }
